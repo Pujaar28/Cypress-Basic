@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-24T09:45:30.023Z",
+    "end": "2024-02-24T09:45:50.271Z",
+    "duration": 20248,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "841fa541-5fe1-47fc-8c89-50659f89a24e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\1-login-page\\user-can-login.cy.js",
+      "file": "cypress\\e2e\\1-login-page\\user-can-login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+          "title": "User can login to system",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can login with valid username and password",
+              "fullTitle": "User can login to system User can login with valid username and password",
+              "timedOut": null,
+              "duration": 9640,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//arrange\ncy.visit('http://127.0.0.1:8000/');\n//act\ncy.get(':nth-child(2) > .form-control').type(\"superadmin@gmail.com\");\ncy.get(':nth-child(3) > .form-control').type(\"password\");\ncy.get('.btn').click();\n//assert\ncy.get('.nav-link > .d-sm-none').should('have.text', \"Hi, SuperAdmin\");\ncy.url().should('include', \"dashboard\");",
+              "err": {},
+              "uuid": "b5d99dad-1ae4-4c20-addd-a851f9cdced3",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cant login with valid username but invalid password",
+              "fullTitle": "User can login to system User cant login with valid username but invalid password",
+              "timedOut": null,
+              "duration": 2579,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://127.0.0.1:8000/');\ncy.get(':nth-child(2) > .form-control').type(\"superadmin@gmail.com\");\ncy.get(':nth-child(3) > .form-control').type(\"password-salah\");\ncy.get('.btn').click();\ncy.get('.invalid-feedback').should('have.text', \"These credentials do not match our records.\");",
+              "err": {},
+              "uuid": "4189a110-4bce-4878-8f8e-ce97604f34dd",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cant login with invalid username but valid password",
+              "fullTitle": "User can login to system User cant login with invalid username but valid password",
+              "timedOut": null,
+              "duration": 2342,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://127.0.0.1:8000/');\ncy.get(':nth-child(2) > .form-control').type(\"superadminhahayy@gmail.com\");\ncy.get(':nth-child(3) > .form-control').type(\"password\");\ncy.get('.btn').click();\ncy.get('.invalid-feedback').should('have.text', \"These credentials do not match our records.\");",
+              "err": {},
+              "uuid": "8feda031-a41f-4e40-9103-99dff4575f0e",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cant login with empty username and valid password",
+              "fullTitle": "User can login to system User cant login with empty username and valid password",
+              "timedOut": null,
+              "duration": 1796,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://127.0.0.1:8000/');\n//cy.get(':nth-child(2) > .form-control').type(\"\")\ncy.get(':nth-child(3) > .form-control').type(\"password\");\ncy.get('.btn').click();\ncy.get('.invalid-feedback').should('have.text', \"The email field is required.\");",
+              "err": {},
+              "uuid": "77ffe52f-c7b1-41af-8c48-f4fcbc030ec7",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cant login with valid username and empty password",
+              "fullTitle": "User can login to system User cant login with valid username and empty password",
+              "timedOut": null,
+              "duration": 1990,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://127.0.0.1:8000/');\ncy.get(':nth-child(2) > .form-control').type(\"superadmin@gmail.com\");\n//cy.get(':nth-child(3) > .form-control').type(\"password-salah\")\ncy.get('.btn').click();\ncy.get('.invalid-feedback').should('have.text', \"The password field is required.\");",
+              "err": {},
+              "uuid": "5cb6d3bc-bf4f-4546-aaed-3db8efedd8fc",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User cant login with empty username and password",
+              "fullTitle": "User can login to system User cant login with empty username and password",
+              "timedOut": null,
+              "duration": 1725,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://127.0.0.1:8000/');\n//cy.get(':nth-child(2) > .form-control').type(\"superadmin@gmail.com\")\n//cy.get(':nth-child(3) > .form-control').type(\"password-salah\")\ncy.get('.btn').click();\ncy.get(':nth-child(2) > .invalid-feedback').should('have.text', \"The email field is required.\");\ncy.get(':nth-child(3) > .invalid-feedback').should('have.text', \"The password field is required.\");",
+              "err": {},
+              "uuid": "0747de93-81ef-4896-8b27-f5634654dfab",
+              "parentUUID": "c4a6576f-6f4f-4a88-b0cb-a6f5236213ec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b5d99dad-1ae4-4c20-addd-a851f9cdced3",
+            "4189a110-4bce-4878-8f8e-ce97604f34dd",
+            "8feda031-a41f-4e40-9103-99dff4575f0e",
+            "77ffe52f-c7b1-41af-8c48-f4fcbc030ec7",
+            "5cb6d3bc-bf4f-4546-aaed-3db8efedd8fc",
+            "0747de93-81ef-4896-8b27-f5634654dfab"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20072,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

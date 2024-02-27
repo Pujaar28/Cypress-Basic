@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-02-24T11:53:52.589Z",
+    "end": "2024-02-24T11:54:01.758Z",
+    "duration": 9169,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "56c7fe79-33c6-40e4-89a3-83daf5ce8f9e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\2-create-read-update-delete-data-user\\user-can-delete-data.cy.js",
+      "file": "cypress\\e2e\\2-create-read-update-delete-data-user\\user-can-delete-data.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e2da9a0c-96fa-4abc-ba07-f6119bbef359",
+          "title": "Working with delete data ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User can delete data",
+              "fullTitle": "Working with delete data  User can delete data",
+              "timedOut": null,
+              "duration": 9076,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "\"../videos/user-can-delete-data.cy.js.mp4\"",
+              "code": "cy.get('.table td').contains('user').parent().contains('Delete').click();\ncy.get('.swal-button-container').find('button').contains('OK').click();\n//example for selecting delete\n//   cy.get('.table td').contains('user').nextAll().contains('Delete').click()\n//   cy.get('.table td').contains('user').next().next().next().next().contains('Delete').click()\ncy.get('.alert').should('be.visible').and(\"have.class\", \"alert-success\").contains('User Deleted Successfully');\ncy.get('.table td').should('not.contain', 'user');",
+              "err": {},
+              "uuid": "e308e27d-5517-49cc-b40e-288ab419c56c",
+              "parentUUID": "e2da9a0c-96fa-4abc-ba07-f6119bbef359",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e308e27d-5517-49cc-b40e-288ab419c56c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9076,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name].html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "useInlineDiffs": true,
+        "embeddedScreenshots": true,
+        "reportDir": "cypress/results",
+        "reportFilename": "[name].html",
+        "overwrite": true,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
